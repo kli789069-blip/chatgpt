@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>智能PDF转换助手</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>智能PDF转换助手</h1>
+      <p>将图表、合同、报告等文件一键生成PDF，管理历史记录与模板。</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>上传文件</h2>
+        <div class="upload-controls">
+          <input
+            type="file"
+            id="fileInput"
+            accept=".docx,.xlsx,.xlsm,.pptx,.txt,.csv"
+          />
+          <button id="uploadBtn">上传文件</button>
+          <button id="generateBtn" class="accent">一键生成PDF</button>
+        </div>
+        <p class="hint">
+          支持 docx、xlsx、xlsm、pptx、txt、csv 等格式，上传后可随时转换。
+        </p>
+      </section>
+
+      <section class="card" id="historySection">
+        <div class="section-header">
+          <h2>历史记录</h2>
+          <span id="historyCount" class="badge">0</span>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>文件名</th>
+                <th>状态</th>
+                <th>上传时间</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody id="historyBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card" id="templateSection">
+        <div class="section-header">
+          <h2>模板中心</h2>
+          <span id="templateCount" class="badge">0</span>
+        </div>
+        <ul id="templateList" class="template-list"></ul>
+      </section>
+    </main>
+
+    <template id="historyRowTemplate">
+      <tr>
+        <td>
+          <input type="radio" name="historySelect" class="history-select" />
+        </td>
+        <td class="filename"></td>
+        <td class="status"></td>
+        <td class="uploaded-at"></td>
+        <td class="actions"></td>
+      </tr>
+    </template>
+
+    <template id="templateItemTemplate">
+      <li class="template-item">
+        <div class="template-meta">
+          <strong class="template-name"></strong>
+          <span class="template-date"></span>
+        </div>
+        <div class="template-actions"></div>
+      </li>
+    </template>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
