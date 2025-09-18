@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+uploads/
+outputs/
+stored_templates/
+data/storage.json
+.env
+instance/

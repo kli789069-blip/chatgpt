@@ -1,0 +1,5 @@
+Flask==3.0.0
+python-docx==0.8.11
+openpyxl==3.1.2
+fpdf2==2.7.9
+python-pptx==0.6.21
